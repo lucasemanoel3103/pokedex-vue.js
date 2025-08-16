@@ -1,0 +1,41 @@
+<template>
+  <div>
+    <h1>{{num}} {{capitalizedName}}</h1>
+    <small>{{url}}</small>
+  </div>
+</template>
+
+<script>
+import axios from 'axios';
+
+export default {
+    created: function(){
+      axios.get(this.url).then(res =>{
+        this.pokemon.type = res.data.types[0]
+        this.pokemon.front = res.data.sprites.front_default;
+        this.pokemon.back = res.data.sprites.back_default;
+      })
+    },
+    data(){
+      return{
+        pokemon: {}
+      }
+    },
+    name: "PokemonCard",
+    props: {
+        num: Number,
+        name: String,
+        url: String
+    },
+     computed: {
+      capitalizedName() {
+        if (!this.name) return "";
+        return this.name.charAt(0).toUpperCase() + this.name.slice(1);
+      }
+    }
+}
+</script>
+
+<style>
+
+</style>
