@@ -30,6 +30,7 @@ Durante o desenvolvimento deste projeto, aprendi:
 - Estilização de componentes com CSS scoped.
 
 🏆 Objetivo do projeto:
+
 Este projeto foi feito para fins de estudo.
 O foco foi aprender os fundamentos do Vue.js na prática, aplicando conceitos básicos de forma simples e divertida.
 
